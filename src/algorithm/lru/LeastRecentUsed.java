@@ -1,17 +1,21 @@
 package algorithm.lru;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.Map;
 
 public class LeastRecentUsed {
     LinkedHashMap<String, String> cache;
     int capacity;
+
     LeastRecentUsed(int capacity) {
         cache = new LinkedHashMap<>();
         this.capacity = capacity;
     }
 
     public boolean get(String key) {
-        if(!cache.containsKey(key)) return false;
+        if (!cache.containsKey(key)) return false;
         String value = cache.get(key);
         cache.remove(key);
         cache.put(key, value);
@@ -19,8 +23,8 @@ public class LeastRecentUsed {
     }
 
     public void put(String key, String value) {
-        if(capacity == 0) return;
-        if(!get(key)) {
+        if (capacity == 0) return;
+        if (!get(key)) {
             if (cache.size() == capacity) {
                 String firstKey = cache.keySet().iterator().next();
                 cache.remove(firstKey);
@@ -29,12 +33,20 @@ public class LeastRecentUsed {
         }
     }
 
+    public void displayNormal() {
+
+        System.out.println("");
+        for (Map.Entry entry : cache.entrySet()) {
+            System.out.print(entry.getValue() + " ");
+        }
+    }
+
     public void displayOne() {
 
         System.out.println("");
         LinkedList<String> list = new LinkedList<>(cache.keySet());
         Iterator<String> itr = list.descendingIterator();
-        while(itr.hasNext()) {
+        while (itr.hasNext()) {
             String key = itr.next();
             System.out.print(cache.get(key) + " ");
         }
@@ -45,6 +57,7 @@ public class LeastRecentUsed {
         lru.put("1", "1");
         lru.put("2", "2");
         lru.put("3", "3");
+        lru.displayNormal();
         lru.displayOne();
 //        lru.put("2", "2");
 //        lru.displayOne();

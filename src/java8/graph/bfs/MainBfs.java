@@ -31,11 +31,11 @@ class Graph {
 
         // An HashMap to keep track of all the
         // nodes which have already been created
-        HashMap<GraphNode, GraphNode> hm =
+        HashMap<GraphNode, GraphNode> hashMap =
                 new HashMap<GraphNode, GraphNode>();
 
         //Put the node into the HashMap
-        hm.put(source, new GraphNode(source.val));
+        hashMap.put(source, new GraphNode(source.val));
 
         while (!q.isEmpty()) {
             // Get the front node from the queue
@@ -43,14 +43,14 @@ class Graph {
             GraphNode u = q.poll();
 
             // Get corresponding Cloned Graph Node
-            GraphNode cloneNodeU = hm.get(u);
+            GraphNode cloneNodeU = hashMap.get(u);
             if (u.neighbours != null) {
                 Vector<GraphNode> v = u.neighbours;
                 for (GraphNode graphNode : v) {
                     // Get the corresponding cloned node
                     // If the node is not cloned then we will
                     // simply get a null
-                    GraphNode cloneNodeG = hm.get(graphNode);
+                    GraphNode cloneNodeG = hashMap.get(graphNode);
 
                     // Check if this node has already been created
                     if (cloneNodeG == null) {
@@ -59,7 +59,7 @@ class Graph {
                         // If not then create a new Node and
                         // put into the HashMap
                         cloneNodeG = new GraphNode(graphNode.val);
-                        hm.put(graphNode, cloneNodeG);
+                        hashMap.put(graphNode, cloneNodeG);
                     }
 
                     // add the 'cloneNodeG' to neighbour
@@ -70,7 +70,7 @@ class Graph {
         }
 
         // Return the reference of cloned source Node
-        return hm.get(source);
+        return hashMap.get(source);
     }
 
     // Build the desired graph
