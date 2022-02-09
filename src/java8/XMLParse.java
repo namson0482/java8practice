@@ -30,34 +30,34 @@ public class XMLParse {
 				+ "<ns2:billId>bill_id_10002</ns2:billId><ns2:year>2021</ns2:year><ns2:period>10</ns2:period>"
 				+ "<ns2:amount>1000</ns2:amount><ns2:totalAmount>1000</ns2:totalAmount><ns2:status>Danh bạ nợ tiền nước</ns2:status>"
 				+ "</ns2:NuocChoLonDetails></ns2:GetNuocChoLonDetailsResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>";
-				
+
 		DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 		InputSource is = new InputSource();
 		is.setCharacterStream(new StringReader(xmlRecords));
-		
+
 		Document doc = db.parse(is);
-    NodeList nodes = doc.getElementsByTagName("ns2:NuocChoLonDetails");
-    for (int i = 0; i < nodes.getLength(); i++) {
-      Element element = (Element) nodes.item(i);
+		NodeList nodes = doc.getElementsByTagName("ns2:NuocChoLonDetails");
+		for (int i = 0; i < nodes.getLength(); i++) {
+			Element element = (Element) nodes.item(i);
 
-      NodeList name = element.getElementsByTagName("ns2:danhBa");
-      Element line = (Element) name.item(0);
-      System.out.println("Danh ba: " + getCharacterDataFromElement(line));
+			NodeList name = element.getElementsByTagName("ns2:danhBa");
+			Element line = (Element) name.item(0);
+			System.out.println("Danh ba: " + getCharacterDataFromElement(line));
 
-      NodeList title = element.getElementsByTagName("ns2:name");
-      line = (Element) title.item(0);
-      System.out.println("name: " + getCharacterDataFromElement(line));
-    }
+			NodeList title = element.getElementsByTagName("ns2:name");
+			line = (Element) title.item(0);
+			System.out.println("name: " + getCharacterDataFromElement(line));
+		}
 	}
-	
+
 	public static String getCharacterDataFromElement(Element e) {
-    Node child = e.getFirstChild();
-    if (child instanceof CharacterData) {
-      CharacterData cd = (CharacterData) child;
-      return cd.getData();
-    }
-    return "";
-  }
+		Node child = e.getFirstChild();
+		if (child instanceof CharacterData) {
+			CharacterData cd = (CharacterData) child;
+			return cd.getData();
+		}
+		return "";
+	}
 
 	public static void main(String[] args) {
 		try {
