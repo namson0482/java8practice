@@ -4,3 +4,9 @@ java8practice.iml
 /.project
 /.classpath
 /.settings/org.eclipse.jdt.core.prefs
+/.idea/jsLinters/eslint.xml
+/.idea/misc.xml
+/.idea/.gitignore
+/.idea/modules.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
