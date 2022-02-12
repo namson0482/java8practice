@@ -26,7 +26,12 @@ public class ArrayExample {
         }
     }
 
+    /**
+     * 
+     * @param args
+     */
     public static void main(String[] args) {
+
         enterArrayValue();
 
         int [][]a;
