@@ -27,13 +27,12 @@ public class ArrayExample {
     }
 
     /**
-     * 
+     *
      * @param args
      */
     public static void main(String[] args) {
 
         enterArrayValue();
-
         int [][]a;
         a = new int[2][2];
         a[0][0] = 1;
