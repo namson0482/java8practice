@@ -1,7 +1,6 @@
-package util.string;
+package java8.practice.string;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class FrequentlyCharacter {
 

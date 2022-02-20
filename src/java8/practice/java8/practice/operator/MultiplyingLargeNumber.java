@@ -1,4 +1,4 @@
-package java8.operator;
+package java8.practice.operator;
 
 public class MultiplyingLargeNumber {
     // Function to compute num (mod a)

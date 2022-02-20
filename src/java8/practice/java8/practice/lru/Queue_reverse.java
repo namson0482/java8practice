@@ -1,4 +1,4 @@
-package algorithm.lru;
+package java8.practice.algorithm.lru;
 
 // Java program to reverse a Queue
 

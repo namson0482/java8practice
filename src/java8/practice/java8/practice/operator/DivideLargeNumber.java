@@ -1,4 +1,4 @@
-package java8.operator;
+package java8.practice.operator;
 
 // Java program to implement division
 // with large number

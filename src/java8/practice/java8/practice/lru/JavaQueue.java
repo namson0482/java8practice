@@ -1,4 +1,4 @@
-package algorithm.lru;
+package java8.practice.algorithm.lru;
 
 import java.util.*;
 

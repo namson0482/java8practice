@@ -1,4 +1,4 @@
-package algorithm.arraylist;
+package java8.practice.algorithm.arraylist;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package util.string;
+package java8.practice.string;
 
 // Java code to demonstrate remove
 // case in Fail-fast iterators

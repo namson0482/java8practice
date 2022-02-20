@@ -1,4 +1,4 @@
-package java8.operator;
+package java8.practice.operator;
 
 import java.util.Scanner;
 
